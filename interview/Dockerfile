@@ -10,12 +10,17 @@ RUN yum update -y && \
 # change directory
 RUN cd /var/www/html
 
-# get website files
-RUN git clone https://github.com/kwcloudconsulting/testarsha.git
-RUN -r testarsha/* /var/www/html/
+# download webfiles
+RUN wget https://github.com/azeezsalu/techmax/archive/refs/heads/main.zip
 
+# unzip folder
+RUN unzip main.zip
 
+# copy files into html directory
+RUN cp -r techmax-main/* /var/www/html/
 
+# remove unwanted folder
+RUN rm -rf techmax-main main.zip
 
 # exposes port 80 on the container
 EXPOSE 80
