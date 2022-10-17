@@ -7,8 +7,8 @@ phases:
   
   pre_build:
     commands:
-      - chmod +x build-image.sh push-image.sh
-      - ./build-image.sh
+      -chmod +x build-image.sh push-image.sh
+      -./build-image.sh
   
   
   
