@@ -14,5 +14,5 @@ phases:
   
   build:
     commands:
-      - ./push-image.sh
+      -./push-image.sh
   
