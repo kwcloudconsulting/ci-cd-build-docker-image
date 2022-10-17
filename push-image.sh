@@ -4,10 +4,10 @@
 set -eu
 
 #login to docker hub
-cat ~/dockerhub_password.txt | docker login --username $DOCKERHUB_USERNAME --password-stdin
+docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASSWORD
 
 # use the docker tag command to add a tag to your image
-sudo docker tag interview $DOCKERHUB_USERNAME/interview
+docker tag $IMAGE_TAG $DOCKERHUB_USERNAME/$DOCKERHUB_REPONAME
 
 # push the image to docker hub
-sudo docker push $DOCKERHUB_USERNAME/interview
+docker push $DOCKERHUB_USERNAME/$DOCKERHUB_REPONAME
